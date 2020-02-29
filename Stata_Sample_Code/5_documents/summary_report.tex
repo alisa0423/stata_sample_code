@@ -1,0 +1,138 @@
+\documentclass[9pt]{article}
+
+%For better code
+\usepackage{verbatim} 			%Allows begin{comment} and end{comment}
+%Also allows for the "verbatim" package
+\pagestyle{plain} %includes page numbers
+\usepackage[margin=0.70in]{geometry} %included to change page margins
+\usepackage[pdftex]{graphicx} %included to insert a graph
+\usepackage{grffile} %allows to use spaces in file names when using pdflatex
+%\usepackage{caption} %included to include a caption over the graph
+
+\usepackage[section]{placeins} %to keep graphs and tables in the very section to which they belong
+\usepackage{pdflscape} %to include the landscape environment
+\usepackage{setspace} %to allow for doubleline spacing, etc
+\usepackage{natbib} % for fancy bibliographies
+\usepackage{amsmath}	 % Packages for Mathematics
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{hyperref}
+
+%For the tables and graphs
+\usepackage{booktabs}		%For different style lines
+\usepackage{calc}			%Necessary for the text wrapping command on tables.
+\usepackage{array}			%For better tables (wrapping text in cells)
+\usepackage{rotating}		%For rotated tables
+\usepackage{longtable}		%Allows tables to extend past one page
+\usepackage{float} 			%Allows to suppress floating of tables
+\usepackage{tabularx}		%Provides more alignment options, and specifying table width
+\usepackage{placeins}		%For floatbarrier
+%\usepackage[lmargin=2cm, rmargin=2cm,tmargin=2.4cm,bmargin=2cm]{geometry}
+\onehalfspacing
+\usepackage{supertabular}
+
+
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{latexsym}
+\usepackage{ctable}
+\usepackage{dcolumn}
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\newcommand{\specialcell}[2][c]{
+	\begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+\setlength\parindent{0em}
+
+
+\usepackage{dcolumn} % to be able to center on the decimal, and add in stata: alignment(D{.}{.}{-1})
+\newcolumntype{C}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[english]{babel} %%% 'french', 'german', 'spanish', 'danish', etc.
+\usepackage{amssymb}
+\usepackage{amsmath}
+%\usepackage{txfonts} % commented out by Carolyn to resume regular font
+\usepackage{mathdots}
+%\usepackage[classicReIm]{kpfonts} % commented out by Carolyn to resume regular font
+
+
+\usepackage{makecell}
+
+\renewcommand\theadalign{cb}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[4pt]}
+\renewcommand\cellgape{\Gape[4pt]}
+
+\onehalfspacing
+\setlength\parindent{15pt}
+%begin the document
+\usepackage{natbib}
+
+
+\usepackage{array}
+\usepackage{xcolor}
+\hypersetup{
+	colorlinks   = true, %Colours links instead of ugly boxes
+	urlcolor     = red, %Colour for external hyperlinks
+	linkcolor    = blue, %Colour of internal links
+	citecolor   = blue %Colour of citations
+}
+
+\usepackage{adjustbox}
+\usepackage{threeparttable}
+\usepackage{soul}
+
+\author{Hongdi Zhao}
+\title{Summary Statistics}
+\date{\today}
+
+
+\begin{document}
+	\maketitle
+	\tableofcontents
+	
+
+\newpage
+\section{Balance Table}
+\input{../3_tables/tab2-balancetable.tex}
+
+
+\newpage
+\section{Regression}
+\input{../3_tables/regtab_pA_incpov.tex}
+\input{../3_tables/regtab_pB_incpov.tex}
+
+
+\newpage
+\section{Appendix}
+\subsection{Other Summary}
+\input{../3_tables/tab1-consent.tex}
+\input{../3_tables/tab1-sum-byvillage.tex}
+
+
+\subsection{GPS Coordinates}
+\begin{figure}[H]
+	\centering
+	\caption{Check GPS Coordinates}
+	\includegraphics[scale=0.50]{../4_figures/gps_check_pilot.png}
+\end{figure}
+
+
+
+\begin{figure}[H]
+	\centering
+	\caption{Check GPS Coordinates - Gehri Bara Singh}
+	\includegraphics[scale=0.50]{../4_figures/gps_check_pilot_1.png}
+\end{figure}
+
+
+
+\begin{figure}[H]
+	\centering
+	\caption{Check GPS Coordinates - Gurusar}
+	\includegraphics[scale=0.50]{../4_figures/gps_check_pilot_2.png}
+\end{figure}
+
+
+
+\end{document}
